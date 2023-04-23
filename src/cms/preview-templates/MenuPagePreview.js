@@ -12,19 +12,14 @@ const MenuPagePreview = ({ entry, getAsset }) => {
   const entryPricingPlans = entry.getIn(['data', 'pricing', 'plans'])
   const pricingPlans = entryPricingPlans ? entryPricingPlans.toJS() : []
 
-  const entryMenuItems = entry.getIn(['data', 'main', 'menu_section', 'menu_items'])
-  const menuItems = entryMenuItems ? entryMenuItems.toJS() : []
+  const entryMenuSections = entry.getIn(['data', 'main', 'menu_sections'])
+  const menuSections = entryMenuSections ? entryMenuSections.toJS() : []
 
   return (
     <MenuPageTemplate
       image={getAsset(entry.getIn(['data', 'image']))}
       title={entry.getIn(['data', 'title'])}
-      main={{
-        // menu_section: entry.getIn(['data', 'main', 'menu_section']),
-        menu_section: {
-          title: entry.getIn(['data', 'main', 'menu_section', 'title']),
-          menu_items: menuItems
-        }
+      menu_sections={menuSections}
         // description: entry.getIn(['data', 'main', 'description']),
         // image1: {
         //   image: getAsset(entry.getIn(['data', 'main', 'image1', 'image'])),
@@ -38,7 +33,7 @@ const MenuPagePreview = ({ entry, getAsset }) => {
         //   image: getAsset(entry.getIn(['data', 'main', 'image3', 'image'])),
         //   alt: entry.getIn(['data', 'main', 'image3', 'alt']),
         // },
-      }}
+      // }}
       // fullImage={getAsset(entry.getIn(['data', 'full_image']))}
       // testimonials={testimonials}
       // pricing={{

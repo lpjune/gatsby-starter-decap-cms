@@ -5,12 +5,14 @@ import { getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import FullWidthImage from "../components/FullWidthImage";
 import MenuSection from "../components/MenuSection";
+import { v4 } from "uuid";
+
 
 // eslint-disable-next-line
 export const MenuPageTemplate = ({
   image,
   title,
-  main
+  menu_sections
   // heading,
   // description,
   // intro,
@@ -21,7 +23,7 @@ export const MenuPageTemplate = ({
 }) => {
   const heroImage = getImage(image) || image;
   // const fullWidthImage = getImage(fullImage) || fullImage;
-  console.log(main.menu_section.menu_items)
+  console.log(menu_sections)
 
   return (
     <div className="content">
@@ -68,7 +70,11 @@ export const MenuPageTemplate = ({
                     </div>
                   </div>
                 </div>
-                <MenuSection title={main.menu_section.title} items={main.menu_section.menu_items} />
+                {menu_sections.map((section) => (
+                  <div key={v4()}>
+                      <MenuSection title={section.title} items={section.menu_items} />
+                  </div>
+                ))}
                 {/* <Testimonials testimonials={testimonials} /> */}
               </div>
             </div>
@@ -98,7 +104,7 @@ export const MenuPageTemplate = ({
 MenuPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  main: PropTypes.any
+  menu_section: PropTypes.any
 };
 
 const MenuPage = ({ data }) => {
@@ -108,7 +114,7 @@ const MenuPage = ({ data }) => {
       <MenuPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        main={frontmatter.main}
+        menu_sections={frontmatter.main.menu_sections}
         // heading={frontmatter.heading}
         // description={frontmatter.description}
         // intro={frontmatter.intro}
@@ -127,7 +133,7 @@ MenuPage.propTypes = {
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
         image: PropTypes.any,
-        main: PropTypes.any
+        menu_sections: PropTypes.any
       }),
     }),
   }),
@@ -146,7 +152,7 @@ export const pageQuery = graphql`
           }
         }
         main {
-          menu_section {
+          menu_sections {
             title
             menu_items {
               name
