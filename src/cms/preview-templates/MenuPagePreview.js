@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 import { MenuPageTemplate } from '../../templates/menu-page'
 
 const MenuPagePreview = ({ entry, getAsset }) => {
-  const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
-  const blurbs = entryBlurbs ? entryBlurbs.toJS() : []
+  // const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs'])
+  // const blurbs = entryBlurbs ? entryBlurbs.toJS() : []
 
-  const entryTestimonials = entry.getIn(['data', 'testimonials'])
-  const testimonials = entryTestimonials ? entryTestimonials.toJS() : []
+  // const entryTestimonials = entry.getIn(['data', 'testimonials'])
+  // const testimonials = entryTestimonials ? entryTestimonials.toJS() : []
 
-  const entryPricingPlans = entry.getIn(['data', 'pricing', 'plans'])
-  const pricingPlans = entryPricingPlans ? entryPricingPlans.toJS() : []
+  // const entryPricingPlans = entry.getIn(['data', 'pricing', 'plans'])
+  // const pricingPlans = entryPricingPlans ? entryPricingPlans.toJS() : []
 
   const entryMenuSections = entry.getIn(['data', 'main', 'menu_sections'])
   const menuSections = entryMenuSections ? entryMenuSections.toJS() : []
