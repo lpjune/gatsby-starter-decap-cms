@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
-import logo from "../img/logo.svg";
+import logo from "../img/logo.png";
+import mapPin from "../img/feather/map-pin.svg"
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
-            <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
+            <img src={logo} alt="Apres Cafe" style={{ }} />
           </Link>
           {/* Hamburger menu */}
           <button
@@ -54,16 +54,21 @@ const Navbar = () => {
             </Link>
             </li>
           <li className="navbar-end has-text-centered">
-            <a
-              className="navbar-item"
-              href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="icon">
-                <img src={github} alt="Github" />
-              </span>
-            </a>
+            <div className="navbar-item">
+              <button
+                className="button is-responsive"
+                href="https://www.google.com/maps?daddr=4695+Racquet+Club+Drive+81657,+Vail"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                      src={mapPin}
+                      alt="Map"
+                      style={{ width: "1.3em", height: "auto", marginRight: "5px" }}
+                    />
+                    Get Directions
+              </button>
+            </div>
           </li>
         </ul>
       </div>

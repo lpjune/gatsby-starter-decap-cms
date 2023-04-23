@@ -4,11 +4,12 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 export default function FullWidthImage(props) {
   const {
-    height = 400,
+    height = 800,
     img,
     title,
     subheading,
-    imgPosition = "top left",
+    subheading2,
+    imgPosition = "center",
   } = props;
 
   return (
@@ -69,8 +70,8 @@ export default function FullWidthImage(props) {
                 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                 style={{
                   boxShadow:
-                    "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-                  backgroundColor: "rgb(255, 68, 0)",
+                    "rgb(248, 101, 11) 0.5rem 0px 0px, rgb(248, 101, 11) -0.5rem 0px 0px",
+                  backgroundColor: "rgb(248, 101, 11)",
                   color: "white",
                   lineHeight: "1",
                   padding: "0.25em",
@@ -84,8 +85,8 @@ export default function FullWidthImage(props) {
                 className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
                 style={{
                   boxShadow:
-                    "rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px",
-                  backgroundColor: "rgb(255, 68, 0)",
+                    "rgb(248, 101, 11) rem 0px 0px, rgb(248, 101, 11) -0.5rem 0px 0px",
+                  backgroundColor: "rgb(248, 101, 11)",
                   color: "white",
                   lineHeight: "1",
                   padding: "0.25rem",
@@ -93,6 +94,22 @@ export default function FullWidthImage(props) {
                 }}
               >
                 {subheading}
+              </h3>
+            )}
+            {subheading2 && (
+              <h3
+                className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
+                style={{
+                  boxShadow:
+                    "rgb(248, 101, 11) rem 0px 0px, rgb(248, 101, 11) -0.5rem 0px 0px",
+                  backgroundColor: "rgb(248, 101, 11)",
+                  color: "white",
+                  lineHeight: "1",
+                  padding: "0.25rem",
+                  marginTop: "0.5rem",
+                }}
+              >
+                {subheading2}
               </h3>
             )}
           </div>

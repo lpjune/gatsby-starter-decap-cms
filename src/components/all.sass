@@ -11,7 +11,7 @@ $body-color: #333
 $black: #2b2523
 
 .navbar .navbar-menu
-  box-shadow: none !important
+  box-shadow: none !important    
 
 .content .taglist
   list-style: none
@@ -77,7 +77,7 @@ $black: #2b2523
 .icon svg
   width: 1.5rem
   height: 1.5rem
-  fill: currentColor
+  // fill: currentColor
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
 footer.footer
@@ -124,6 +124,11 @@ $menu-label-color: $white-ter
 
 
 @import "~bulma"
+
+.navbar-brand .navbar-item img
+  @include desktop
+    max-height: unset
+    width: 50px
 
 
 // responsiveness
