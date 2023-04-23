@@ -12,36 +12,40 @@ const MenuPagePreview = ({ entry, getAsset }) => {
   const entryPricingPlans = entry.getIn(['data', 'pricing', 'plans'])
   const pricingPlans = entryPricingPlans ? entryPricingPlans.toJS() : []
 
+  const entryMenuItems = entry.getIn(['data', 'main', 'menu_section', 'menu_items'])
+  const menuItems = entryMenuItems ? entryMenuItems.toJS() : []
+
   return (
     <MenuPageTemplate
       image={getAsset(entry.getIn(['data', 'image']))}
       title={entry.getIn(['data', 'title'])}
-      heading={entry.getIn(['data', 'heading'])}
-      description={entry.getIn(['data', 'description'])}
-      intro={{ blurbs }}
       main={{
-        heading: entry.getIn(['data', 'main', 'heading']),
-        description: entry.getIn(['data', 'main', 'description']),
-        image1: {
-          image: getAsset(entry.getIn(['data', 'main', 'image1', 'image'])),
-          alt: entry.getIn(['data', 'main', 'image1', 'alt']),
-        },
-        image2: {
-          image: getAsset(entry.getIn(['data', 'main', 'image2', 'image'])),
-          alt: entry.getIn(['data', 'main', 'image2', 'alt']),
-        },
-        image3: {
-          image: getAsset(entry.getIn(['data', 'main', 'image3', 'image'])),
-          alt: entry.getIn(['data', 'main', 'image3', 'alt']),
-        },
+        // menu_section: entry.getIn(['data', 'main', 'menu_section']),
+        menu_section: {
+          title: entry.getIn(['data', 'main', 'menu_section', 'title']),
+          menu_items: menuItems
+        }
+        // description: entry.getIn(['data', 'main', 'description']),
+        // image1: {
+        //   image: getAsset(entry.getIn(['data', 'main', 'image1', 'image'])),
+        //   alt: entry.getIn(['data', 'main', 'image1', 'alt']),
+        // },
+        // image2: {
+        //   image: getAsset(entry.getIn(['data', 'main', 'image2', 'image'])),
+        //   alt: entry.getIn(['data', 'main', 'image2', 'alt']),
+        // },
+        // image3: {
+        //   image: getAsset(entry.getIn(['data', 'main', 'image3', 'image'])),
+        //   alt: entry.getIn(['data', 'main', 'image3', 'alt']),
+        // },
       }}
-      fullImage={getAsset(entry.getIn(['data', 'full_image']))}
-      testimonials={testimonials}
-      pricing={{
-        heading: entry.getIn(['data', 'pricing', 'heading']),
-        description: entry.getIn(['data', 'pricing', 'description']),
-        plans: pricingPlans,
-      }}
+      // fullImage={getAsset(entry.getIn(['data', 'full_image']))}
+      // testimonials={testimonials}
+      // pricing={{
+      //   heading: entry.getIn(['data', 'pricing', 'heading']),
+      //   description: entry.getIn(['data', 'pricing', 'description']),
+      //   plans: pricingPlans,
+      // }}
     />
   )
 }

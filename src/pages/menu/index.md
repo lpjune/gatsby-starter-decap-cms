@@ -9,9 +9,9 @@ main:
     title: Snacks
     menu_items:
       - name: Lobster Bisque
-        price: 12
+        price: '12'
       - name: Coconut Shrimp
-        price: 17
+        price: '17'
 # pricing:
 #   heading: Monthly subscriptions
 #   description: We make it easy to make great coffee a part of your life. Choose

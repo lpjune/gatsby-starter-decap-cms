@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 const MenuItem = ({ name, description, price }) => (
   <div>
-    {name}
-    {description}
+    <div>{name}</div>
+    {/* {description} */}
     {price}
   </div>
 );

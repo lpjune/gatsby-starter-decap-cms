@@ -9,7 +9,7 @@ const MenuSection = ({ title, items }) => (
     <div>
     {items.map((item) => (
       <div key={v4()} className="is-primary">
-        <p style={{fontSize: '20px'}}>{item.price}</p>
+        <p style={{fontSize: '20px'}}>{item.name} - {item.price}</p>
       </div>
     ))}
     </div>
