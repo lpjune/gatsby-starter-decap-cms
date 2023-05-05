@@ -10,8 +10,54 @@ main:
       menu_items:
         - name: Lobster Bisque
           price: '12'
+        - name: Shrimp Cocktail
+          price: 1/2lb 15, 1lb 27
+        - name: 'Tuna Poke Crisps*'
+          price: '19'
         - name: Coconut Shrimp
           price: '17'
+        - name: Bison Chili
+          price: '14'
+
+    - title: French Fries
+      menu_items:
+        - name: Sea Salt
+        - name: Malt Vinegar
+        - name: Cracked Pepper
+        - name: Old Bay
+        - name: Truffle
+          price: '+4'
+    
+    - title: Salads
+      menu_items:
+        - name: Greek Salad
+          description: feta, olives, pepperoncini, artichoke, cucumber, scallion, crostini, BC greens, Greek vin
+          price: '17'
+        - name: Caesar
+          description: romaine, parm, crouton
+          price: '14'
+        - name: Beet Salad
+          description: honey granola, orange, blue cheese, BC Farms greens, poppyseed vin
+          price: '17'
+        - name: Apres Simple
+          description: tomato, radish, scallion, BC Farms greens, red wine vin
+          price: '10'
+
+    - title: Sandwiches
+      menu_items:
+        - name: Crab Roll
+          description: crab salad, bacon, romaine, split top bun
+          price: '25'
+        - name: French Onion Burger
+          description: braised onions, gruyere, greens, pretzel bun
+          price: '20'
+        - name: BLT
+          description: bacon, lettuce, tomato, ciabatta
+          price: '17'
+        - name: Chicken Melt
+          description: herbed chicken, prosciutto, manchego, pesto aioli, telera bun
+          price: '20'
+
 # pricing:
 #   heading: Monthly subscriptions
 #   description: We make it easy to make great coffee a part of your life. Choose
