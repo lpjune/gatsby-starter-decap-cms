@@ -156,20 +156,225 @@ collections:
                 {
                   label: Menu Section,
                   name: menu_sections,
-                  widget: list,
-                  fields: [
-                      { label: Title, name: title, widget: string },
-                      {
-                        label: Menu Items,
-                        name: menu_items,
-                        widget: list,
-                        fields: [
-                          { label: Name, name: name, widget: string },
-                          { label: Description, name: description, widget: string, required: false },
-                          { label: Price, name: price, widget: string, required: false }
-                        ]
+                  widget: object,
+                  fields: {
+                    {
+                      label: Snacks,
+                      name: snacks,
+                      widget: object,
+                      fields: {
+                        {
+                          label: Items,
+                          name: items,
+                          widget: list,
+                          fields: [
+                            { label: Name, name: name, widget: string },
+                            { label: Price, name: price, widget: string },
+                            { label: Price2, name: price2, widget: string, required: false }
+                          ]
+                        }
                       }
-                  ]
+                    },
+                    {
+                      label: French Fries,
+                      name: french_fries,
+                      widget: object,
+                      fields: [
+                        { label: Base Price, name: base_price, widget: string },
+                        {
+                          label: Sections,
+                          name: sections,
+                          widget: list,
+                          fields: [
+                            { label: Title, name: title, widget: string },
+                            { 
+                              label: Items,
+                              name: items,
+                              widget: list,
+                              fields: [
+                                { label: Name, name: name, widget: string },
+                                { label: Price, name: price, widget: string, required: false }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      label: Salads,
+                      name: salads,
+                      widget: object,
+                      fields: [
+                        {
+                          label: Items,
+                          name: items,
+                          widget: list,
+                          fields: [
+                            { label: Name, name: name, widget: string },
+                            { label: Price, name: price, widget: string },
+                            { label: Description, name: description, widget: string }
+                          ]
+                        },
+                        {
+                          label: Salad Proteins,
+                          name: salad_proteins,
+                          widget: list,
+                          fields: [
+                            { label: Name, name: name, widget: string },
+                            { label: Price, name: price, widget: string }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      label: Sandwiches,
+                      name: sandwiches,
+                      widget: object,
+                      fields: [
+                        {
+                          label: Items,
+                          name: items,
+                          widget: list,
+                          fields: [
+                            { label: Name, name: name, widget: string },
+                            { label: Price, name: price, widget: string },
+                            { label: Description, name: description, widget: string }
+                          ]
+                        },
+                        {
+                          label: Sides,
+                          name: sides,
+                          widget: list,
+                          fields: [
+                            { label: Name, name: name, widget: string },
+                            { label: Price, name: price, widget: string }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      label: Pizza,
+                      name: pizza,
+                      widget: list,
+                      fields: [
+                        { label: Name, name: name, widget: string },
+                        { label: Price, name: price, widget: string },
+                        { label: Description, name: description, widget: string }
+                      ]
+                    },
+                    {
+                      label: BYOP,
+                      name: byop,
+                      widget: object,
+                      fields: [
+                        { label: Base Price, name: base_price, widget: string },
+                        {
+                          label: Sections,
+                          name: sections,
+                          widget: list,
+                          fields: [
+                            { label: Header,
+                              name: header,
+                              widget: object,
+                              fields: [
+                                { label: Title, name: title, widget: string },
+                                { label: Price, name: price, widget: string, required: false }
+                              ]
+                            },
+                            { 
+                              label: Items,
+                              name: items,
+                              widget: list,
+                              fields: [
+                                { label: Name, name: name, widget: string },
+                                { label: Price, name: price, widget: string, required: false }
+                              ]
+                            }
+                          ]
+                        }
+                        
+                      ]
+                    },
+                    {
+                      label: Garlic Knots,
+                      name: garlic_knots,
+                      widget: list,
+                      fields: [
+                        { label: Name, name: name, widget: string },
+                        { label: Price, name: price, widget: string }
+                      ]
+                    },
+                    {
+                      label: Something Sweet,
+                      name: something_sweet,
+                      widget: list,
+                      fields: [
+                        { label: Name, name: name, widget: string },
+                        { label: Price, name: price, widget: string }
+                      ]
+                    },
+                    {
+                      label: Kids Stuff,
+                      name: kids_stuff,
+                      widget: object,
+                      fields: [
+                        { label: Base Price, name: base_price, widget: string }
+                        {
+                          label: Items,
+                          name: items,
+                          widget: list,
+                          fields: [
+                            { label: Name, name: name, widget: string },
+                            { label: Price, name: price, widget: string, required: false }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      label: Cocktails,
+                      name: cocktails,
+                      widget: list,
+                      fields: [
+                        { label: Name, name: name, widget: string },
+                        { label: Price, name: price, widget: string },
+                        { label: Description, name: description, widget: string }
+                      ]
+                    },
+                    {
+                      label: Wine and Beer,
+                      name: wine_beer,
+                      widget: object,
+                      fields: [
+                        {
+                          label: Wine,
+                          name: wine,
+                          widget: list,
+                          fields: [
+                            { label: Name, name: name, widget: string },
+                            { label: Price, name: price, widget: string }
+                          ]
+                        },
+                        {
+                          label: Beer,
+                          name: beer,
+                          widget: list,
+                          fields: [
+                            { label: Name, name: name, widget: string },
+                            { label: Price, name: price, widget: string }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      label: N/A Beverages,
+                      name: na_bevs,
+                      widget: list,
+                      fields: [
+                        { label: Name, name: name, widget: string },
+                        { label: Price, name: price, widget: string },
+                      ]
+                    }
+                  }
                 }
               ]
           }
