@@ -28,48 +28,36 @@ export const MenuPageTemplate = ({
   return (
     <div className="content">
       <FullWidthImage img={heroImage} title={title} />
-      <section className="section section--gradient">
+      {/* <section className="section"> */}
         <div className="container">
           <div className="section">
-            <div className="columns">
-              <div className="column is-7 is-offset-1">
-                <h3 className="has-text-weight-semibold is-size-2">
-                  {/* {heading} */}
-                </h3>
-                {/* <p>{description}</p> */}
-              </div>
-            </div>
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="tile is-ancestor">
-                  {menu_sections.map((section) => (
-                    <div className="tile is-parent" key={v4()}>
-                        <MenuSection title={section.title} items={section.items} subsections={section.subsections} />
-                    </div>
-                  ))}
+              <div className="tile is-12 is-ancestor" style={{flexWrap: 'wrap'}}>
+              {menu_sections.map((section) => (
+                <div className="tile is-parent is-4" key={v4()}>
+                    <MenuSection title={section.title} items={section.items} subsections={section.subsections} />
                 </div>
-                {/* <Testimonials testimonials={testimonials} /> */}
+              ))}
+              </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+            {/* <Testimonials testimonials={testimonials} /> */}
+      {/* </section> */}
       {/* <FullWidthImage img={fullWidthImage} imgPosition={"bottom"} /> */}
-      <section className="section section--gradient">
-        <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <h2 className="has-text-weight-semibold is-size-2">
+      {/* <section className="section section--gradient"> */}
+        {/* <div className="container"> */}
+          {/* <div className="section"> */}
+            {/* <div className="columns"> */}
+              {/* <div className="column is-10 is-offset-1"> */}
+                {/* <h2 className="has-text-weight-semibold is-size-2"> */}
                   {/* {pricing.heading} */}
-                </h2>
+                {/* </h2> */}
                 {/* <p className="is-size-5">{pricing.description}</p> */}
                 {/* <Pricing data={pricing.plans} /> */}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+              {/* </div> */}
+            {/* </div> */}
+          {/* </div> */}
+        {/* </div> */}
+      {/* </section> */}
     </div>
   );
 };
