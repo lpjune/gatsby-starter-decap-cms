@@ -44,7 +44,7 @@ export const MenuPageTemplate = ({
                 <div className="tile is-ancestor">
                   {menu_sections.map((section) => (
                     <div className="tile is-parent" key={v4()}>
-                        <MenuSection title={section.title} items={section.menu_items} />
+                        <MenuSection title={section.title} items={section.items} subsections={section.subsections} />
                     </div>
                   ))}
                 </div>
@@ -127,10 +127,21 @@ export const pageQuery = graphql`
         main {
           menu_sections {
             title
-            menu_items {
+            subtitle
+            base_price
+            items {
               name
-              description
               price
+              price2
+              description
+            }
+            subsections {
+              title
+              base_price
+              items {
+                name
+                price
+              }
             }
           }
         }

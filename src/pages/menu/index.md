@@ -6,7 +6,8 @@ title: Our Menu
 image: /img/jumbotron.jpg
 main:
   menu_sections:
-    snacks:
+    - title: Snacks
+      items:
       - name: Lobster Bisque
         price: '12'
       - name: Shrimp Cocktail
@@ -19,9 +20,9 @@ main:
       - name: Bison Chili
         price: '14'
     
-    french_fries:
+    - title: French Fries
       base_price: '9'
-      sections:
+      subsections:
         - title: Seasoning
           items:
             - name: Sea Salt
@@ -47,7 +48,7 @@ main:
             - name: Crispy Cod
               price: '+10'
 
-    salads:
+    - title: Salads
       items:
         - name: Greek Salad
           description: feta, olives, pepperoncini, artichoke, cucumber, scallion, crostini, BC greens, Greek vin
@@ -61,17 +62,19 @@ main:
         - name: Apres Simple
           description: tomato, radish, scallion, BC Farms greens, red wine vin
           price: '10'
-      salad_proteins:
-        - name: Crab
-          price: '16'
-        - name: Salmon*
-          price: '14'
-        - name: Shrimp
-          price: '12'
-        - name: Crispy or Grilled Chicken
-          price: '10'
+      subsections:
+        - title: Salad Proteins
+          items:
+            - name: Crab
+              price: '16'
+            - name: Salmon*
+              price: '14'
+            - name: Shrimp
+              price: '12'
+            - name: Crispy or Grilled Chicken
+              price: '10'
 
-    sandwiches:
+    - title: Sandwiches
       items:
         - name: Crab Roll
           description: crab salad, bacon, romaine, split top bun
@@ -85,65 +88,65 @@ main:
         - name: Chicken Melt
           description: herbed chicken, prosciutto, manchego, pesto aioli, telera bun
           price: '20'
-      sides:
-        - name: Denver Co Chips
-          price: '3'
-        - name: Small Fries
-          price: '4'
-        - name: Apres Small Simple
-          price: '4'
+      subsections:
+        - title: Sides
+          items:
+            - name: Denver Co Chips
+              price: '3'
+            - name: Small Fries
+              price: '4'
+            - name: Apres Small Simple
+              price: '4'
 
-    pizza:
-      - name: Pepperoni
-        price: '20'
-        description: mozzarella, red sauce
-      - name: Cubano Style
-        price: '24'
-        description: prosciutto, black forest ham, mozzarella, pickle, french dijon, EVOO
-      - name: Shiitake Truffle
-        price: '26'
-        description: mushrooms, mozzarella, onion, garlic, spinach, arugula, truffle
-      - name: Margherita Pizza
-        price: '21'
-        description: tomato, mozzarella, parm, basil, EVOO
-      - name: Cheese
-        price: '18'
-        description: cheese blend, red sauce
-      - name: Down on the Farm
-        price: '24'
-        description: grilled chicken, bacon, cheddar, scallion, jalapeno, BBQ, ranch
-      - name: Orange Crush
-        price: '23'
-        description: crispy chicken, buffalo sauce, cheddar, mozzarella, scallion
+    - title: Pizza
+      items:
+        - name: Pepperoni
+          price: '20'
+          description: mozzarella, red sauce
+        - name: Cubano Style
+          price: '24'
+          description: prosciutto, black forest ham, mozzarella, pickle, french dijon, EVOO
+        - name: Shiitake Truffle
+          price: '26'
+          description: mushrooms, mozzarella, onion, garlic, spinach, arugula, truffle
+        - name: Margherita Pizza
+          price: '21'
+          description: tomato, mozzarella, parm, basil, EVOO
+        - name: Cheese
+          price: '18'
+          description: cheese blend, red sauce
+        - name: Down on the Farm
+          price: '24'
+          description: grilled chicken, bacon, cheddar, scallion, jalapeno, BBQ, ranch
+        - name: Orange Crush
+          price: '23'
+          description: crispy chicken, buffalo sauce, cheddar, mozzarella, scallion
 
-    byop:
+    - title: BYOP
+      subtitle: Build Your Own Pizza
       base_price: '18'
-      sections:
-        - header:
-            title: Sauce
+      subsections:
+        - title: Sauce
           items:
             - name: Red Sauce
             - name: Pesto
             - name: EVOO
             - name: Truffle
               price: '+4'
-        - header:
-            title: Cheese
+        - title: Cheese
           items:
             - name: Mozzarella
             - name: Cheddar
             - name: Feta
-        - header:
-            title: Meats
-            price: '+2'
+        - title: Meats
+          base_price: '+2'
           items:
             - name: Grilled Chicken
             - name: Pepperoni
             - name: Sausage
             - name: Ham
-        - header:
-            title: Veggies
-            price: '+1'
+        - title: Veggies
+          base_price: '+1'
           items:
             - name: Mushrooms
             - name: Olives
@@ -154,19 +157,22 @@ main:
             - name: Basil
             - name: Spinach
 
-    garlic_knots:
-      - name: Garlic Oil, Parm, Herbs
-        price: '12'
+    - title: Garlic Knots
+      items:
+        - name: Garlic Oil, Parm, Herbs
+          price: '12'
 
-    something_sweet:
-      - name: Peanut Butter Brownie
-        price: '5'
-      - name: Berry Crisp
-        price: '9'
-      - name: Ice Cream Bar
-        price: '5'
+    - title: Something Sweet
+      items:
+        - name: Peanut Butter Brownie
+          price: '5'
+        - name: Berry Crisp
+          price: '9'
+        - name: Ice Cream Bar
+          price: '5'
 
-    kids_stuff:
+    - title: Kids Stuff
+      subtitle: with fries or chips
       base_price: '15'
       items:
         - name: Chicken Tenders
@@ -176,25 +182,26 @@ main:
         - name: Kid Pasta - red sauce or butter
           price: '10'
 
-    cocktails:
-      - name: Exit 180
-        price: '12'
-        description: Rye Old Fashioned
-      - name: Real Dill Michelada
-        price: '9'
-        description: Modelo, Bloody Mix, Tabasco & Worcestshire
-      - name: Simple Marg
-        price: '13'
-        description: Tequila, Cointreau, Simple, add Gran Marnier {+3}
-      - name: Hot Toddy
-        price: '10'
-        description: Four Roses Bourbon, Lemon, Spiced Honey
-      - name: Irish Coffee
-        price: '10'
-        description: Jameson, Coffee, Cane Sugar, Whippy
+    - title: Cocktails
+      items:
+        - name: Exit 180
+          price: '12'
+          description: Rye Old Fashioned
+        - name: Real Dill Michelada
+          price: '9'
+          description: Modelo, Bloody Mix, Tabasco & Worcestshire
+        - name: Simple Marg
+          price: '13'
+          description: Tequila, Cointreau, Simple, add Gran Marnier {+3}
+        - name: Hot Toddy
+          price: '10'
+          description: Four Roses Bourbon, Lemon, Spiced Honey
+        - name: Irish Coffee
+          price: '10'
+          description: Jameson, Coffee, Cane Sugar, Whippy
 
-    wine_beer:
-      wine:
+    - title: Wine & Beer
+      items:
         - name: Segura Brut Cava
           price: '9'
         - name: Pere Mata Rose Cava
@@ -213,48 +220,125 @@ main:
           price: '12'
         - name: Murphy Goode Cabernet
           price: '14'
+        - name: Coors Banquet
+          price: '5'
+        - name: Coors Light
+          price: '5'
+        - name: Modelo
+          price: '5'
+        - name: VBC Blonde 16oz
+          price: '8'
+        - name: VBC Gore Creek IPA 16oz
+          price: '8'
+        - name: VBC Hazy IPA Rotating 16oz
+          price: '9'
+        - name: Boulevard Unfiltered Wheat
+          price: '5'
+        - name: Left Hand Nitro Stout
+          price: '5'
+        - name: Heineken 0.0 NA
+          price: '6'
+
+    - title: N/A Beverages
+      subsections:
+        - items:
+          - name: Pepsi
+            price: '3'
+          - name: Diet Pepsi
+            price: '3'
+          - name: Dr. Pepper
+            price: '3'
+          - name: Mountain Dew
+            price: '3'
+          - name: Ginger Ale
+            price: '3'
+          - name: Sierra Mist
+            price: '3'
+          - name: Pellegrino
+            price: '6'
+          - name: Red Bull
+            price: '5'
+        - items:
+          - name: Iced Tea
+            price: '4'
+          - name: Lemonade
+            price: '4'
+          - name: Arnold Palmer
+            price: '4'
+        - title: Dram CBD Sodas
+          base_price: '6'
+          items:
+            - name: Lemongrass
+            - name: Gingergrass
+        - title: Rocky Mountain Sodas
+          base_price: '4'
+          items:
+            - name: Root Beer
+            - name: Orange Cream
+        - title: Big B's Juice
+          base_price: '6'
+          items:
+            - name: Matcha Mint Lemonade
+            - name: Apple Juice
+
+    - title: Wines by the Bottle
+      subsections:
+        - title: Bubbles
+          items:
+            - name: Segura Viudas Cava NV, Spain
+              price: '36'
+            - name: Pere Mata Cupada Rose NV, Spain
+              price: '56'
+            - name: 375ml Laurant Perrier
+              price: '75'
+        - title: White
+          items:
+            - name: 2020 La Foillette Chardonnay
+              price: '52'
+            - name: 2020 Sonoma Cutrer Chardonnay
+              price: '60'
+            - name: 2017 Novellum Chardonnay
+              price: '45'
+            - name: 2019 Gassier Viogner Embruns
+              price: '40'
+            - name: 2020 Allan Scott Sauvignon Blanc
+              price: '48'
+            - name: 2020 Domaine Chatelain Sancerre
+              price: '85'
+            - name: 2021 Peritico Pinot Grigio
+              price: '40'
+            - name: 2019 Pine Ridge Chenin Blanc
+              price: '50'
+        - title: Red
+          items:
+            - name: 2020 Ramsey Pinot Noir
+              price: '44'
+            - name: 2021 Ken Wright Pinot Noir
+              price: '75'
+            - name: 2017 Dominio IV Pinot Noir
+              price: '70'
+            - name: 2018 Aurelien Verdet Le Prieure
+              price: '135'
+            - name: 2019 Catena Malbec
+              price: '55'
+            - name: 2019 Tres Picos Garnacha
+              price: '50'
+            - name: 2018 Murphey Goode Cabernet Sauvignon
+              price: '52'
+            - name: 2016 CastleRock Cabernet Sauvignon
+              price: '44'
+            - name: 2016 Ramey Cabernet Sauvignon
+              price: '140'
+            - name: 2015 Jordan Canermet Sauvignon
+              price: '150'
+            - name: 2015 Silver Oak Alexander Valley Cabernet Sauvignon
+              price: '275'
+            - name: 2019 Vietti Perbacco Nebbiolo
+              price: '70'
 
 
 
 
-    # title: French Fries
-    #   menu_items:
-    #     - name: Sea Salt
-    #     - name: Malt Vinegar
-    #     - name: Cracked Pepper
-    #     - name: Old Bay
-    #     - name: Truffle
-    #       price: '+4'
-    
-    # - title: Salads
-    #   menu_items:
-    #     - name: Greek Salad
-    #       description: feta, olives, pepperoncini, artichoke, cucumber, scallion, crostini, BC greens, Greek vin
-    #       price: '17'
-    #     - name: Caesar
-    #       description: romaine, parm, crouton
-    #       price: '14'
-    #     - name: Beet Salad
-    #       description: honey granola, orange, blue cheese, BC Farms greens, poppyseed vin
-    #       price: '17'
-    #     - name: Apres Simple
-    #       description: tomato, radish, scallion, BC Farms greens, red wine vin
-    #       price: '10'
-
-    # - title: Sandwiches
-    #   menu_items:
-    #     - name: Crab Roll
-    #       description: crab salad, bacon, romaine, split top bun
-    #       price: '25'
-    #     - name: French Onion Burger
-    #       description: braised onions, gruyere, greens, pretzel bun
-    #       price: '20'
-    #     - name: BLT
-    #       description: bacon, lettuce, tomato, ciabatta
-    #       price: '17'
-    #     - name: Chicken Melt
-    #       description: herbed chicken, prosciutto, manchego, pesto aioli, telera bun
-    #       price: '20'
 
 # pricing:
 #   heading: Monthly subscriptions

@@ -14,7 +14,7 @@ const MenuItem = ({ name, description, price }) => (
 MenuItem.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
-    price: PropTypes.string.isRequired
+    price: PropTypes.string
 };
 
 export default MenuItem;

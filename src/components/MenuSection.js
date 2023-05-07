@@ -3,13 +3,18 @@ import PropTypes from "prop-types";
 import { v4 } from "uuid";
 import MenuItem from './MenuItem'
 
-const MenuSection = ({ title, items }) => (
+const MenuSection = ({ title, items, subsections }) => (
   <div className="tile is-child box">
     <p className="title">{title}</p>
     <div>
-    {items.map((item) => (
+    {items && items.map((item) => (
       <div key={v4()} className="is-primary">
         <MenuItem {...item} />
+      </div>
+    ))}
+    { subsections && subsections.map((section) => (
+      <div className="tile is-parent" key={v4()}>
+          <MenuSection title={section.title} items={section.items} />
       </div>
     ))}
     </div>
@@ -17,7 +22,7 @@ const MenuSection = ({ title, items }) => (
 );
 
 MenuSection.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     items: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string,
