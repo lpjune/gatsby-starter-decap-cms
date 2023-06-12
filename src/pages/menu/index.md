@@ -3,7 +3,7 @@ heading: Great coffee with a conscience
 path: /menu
 templateKey: menu-page
 title: Our Menu
-image: /img/jumbotron.jpg
+image: /img/pizza-twists.jpg
 main:
   menu_sections:
     - title: Snacks
@@ -98,7 +98,7 @@ main:
             - name: Apres Small Simple
               price: '4'
 
-    - title: Pizza
+    - title: Pizzas
       items:
         - name: Pepperoni
           price: '20'
@@ -201,43 +201,45 @@ main:
           description: Jameson, Coffee, Cane Sugar, Whippy
 
     - title: Wine & Beer
-      items:
-        - name: Segura Brut Cava
-          price: '9'
-        - name: Pere Mata Rose Cava
-          price: '14'
-        - name: Allan Scott Sauvignon Blanc
-          price: '13'
-        - name: La Folliette Chardonnay
-          price: '14'
-        - name: Domaine Gassier Viognier
-          price: '11'
-        - name: Ramsay Pinot Noir
-          price: '12'
-        - name: Avignonese Cantaloro
-          price: '12'
-        - name: Cantena Malbec
-          price: '12'
-        - name: Murphy Goode Cabernet
-          price: '14'
-        - name: Coors Banquet
-          price: '5'
-        - name: Coors Light
-          price: '5'
-        - name: Modelo
-          price: '5'
-        - name: VBC Blonde 16oz
-          price: '8'
-        - name: VBC Gore Creek IPA 16oz
-          price: '8'
-        - name: VBC Hazy IPA Rotating 16oz
-          price: '9'
-        - name: Boulevard Unfiltered Wheat
-          price: '5'
-        - name: Left Hand Nitro Stout
-          price: '5'
-        - name: Heineken 0.0 NA
-          price: '6'
+      subsections:
+        - items:
+          - name: Segura Brut Cava
+            price: '9'
+          - name: Pere Mata Rose Cava
+            price: '14'
+          - name: Allan Scott Sauvignon Blanc
+            price: '13'
+          - name: La Folliette Chardonnay
+            price: '14'
+          - name: Domaine Gassier Viognier
+            price: '11'
+          - name: Ramsay Pinot Noir
+            price: '12'
+          - name: Avignonese Cantaloro
+            price: '12'
+          - name: Cantena Malbec
+            price: '12'
+          - name: Murphy Goode Cabernet
+            price: '14'
+        - items:
+          - name: Coors Banquet
+            price: '5'
+          - name: Coors Light
+            price: '5'
+          - name: Modelo
+            price: '5'
+          - name: VBC Blonde 16oz
+            price: '8'
+          - name: VBC Gore Creek IPA 16oz
+            price: '8'
+          - name: VBC Hazy IPA Rotating 16oz
+            price: '9'
+          - name: Boulevard Unfiltered Wheat
+            price: '5'
+          - name: Left Hand Nitro Stout
+            price: '5'
+          - name: Heineken 0.0 NA
+            price: '6'
 
     - title: N/A Beverages
       subsections:

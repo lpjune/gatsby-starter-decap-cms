@@ -4,7 +4,7 @@ import { v4 } from "uuid";
 import MenuItem from './MenuItem'
 
 const MenuSection = ({ title, items, subsections }) => (
-  <div>
+  <div className="tile is-child">
     <p className="title">{title}</p>
     <div>
     {items && items.map((item) => (
