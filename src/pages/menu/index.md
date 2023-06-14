@@ -8,56 +8,56 @@ main:
   menu_sections:
     - title: Snacks
       items:
-      - name: Lobster Bisque
-        price: '12'
-      - name: Shrimp Cocktail
-        price: 1/2lb 15
-        price2: 1lb 27
-      - name: 'Tuna Poke Crisps*'
-        price: '19'
       - name: Coconut Shrimp
         price: '17'
-      - name: Bison Chili
+      - name: 'Tuna Poke Crisps*'
+        price: '19'
+      - name: Lump Crab Ceviche
+        price: '24'
+      - name: Sweet Pea Hummus
         price: '14'
     
-    - title: French Fries
+    - title: French Fry Baskets
       base_price: '9'
       subsections:
-        - title: Seasoning
+        - items:
+            - name: Just Fries
+              price: '10'
+            - name: Crispy Chicken
+              price: '19'
+            - name: Grilled Chicken
+              price: '20'
+            - name: Lump Crab
+              price: '24'
+            - name: Short Rib
+              price: '25'
+            - name: Crispy Cod
+              price: '20'
+            - name: Truffle Parm
+              price: '14'
+        - title: Seasonings
           items:
             - name: Sea Salt
             - name: Malt Vinegar
             - name: Cracked Pepper
             - name: Old Bay
-            - name: Truffle
-              price: '+4'
-        - title: Sauce
+        - title: Sauces
           items:
             - name: Garlic Aioli
-            - name: Zippy
+            - name: Zippy Aioli
             - name: Ranch
             - name: Blue Cheese
-            - name: Cheesy
-              price: '+4'
-        - title: Protein
-          items:
-            - name: Crispy or Grilled Chicken
-              price: '+10'
-            - name: Bison Chili
-              price: '+10'
-            - name: Crispy Cod
-              price: '+10'
 
     - title: Salads
       items:
         - name: Greek Salad
-          description: feta, olives, pepperoncini, artichoke, cucumber, scallion, crostini, BC greens, Greek vin
+          description: feta, olives, pepperoncini, artichoke, cucumber, scallion, naan, BC greens, Greek vin
           price: '17'
         - name: Caesar
           description: romaine, parm, crouton
           price: '14'
-        - name: Beet Salad
-          description: honey granola, orange, blue cheese, BC Farms greens, poppyseed vin
+        - name: Summer Tabbouleh
+          description: farro, tomato, cucumber, summer squash, scallion, BC greens, radish, mint, red wine vin
           price: '17'
         - name: Apres Simple
           description: tomato, radish, scallion, BC Farms greens, red wine vin
@@ -65,29 +65,32 @@ main:
       subsections:
         - title: Salad Proteins
           items:
-            - name: Crab
+            - name: Lump Crab
               price: '16'
             - name: Salmon*
               price: '14'
-            - name: Shrimp
+            - name: Tuna Poke*
               price: '12'
-            - name: Crispy or Grilled Chicken
+            - name: Crispy Chicken
+              price: '9'
+            - name: Grilled Chicken
               price: '10'
 
     - title: Sandwiches
       items:
         - name: Crab Roll
-          description: crab salad, bacon, romaine, split top bun
+          description: lump crab salad, bacon, romaine, split top bun
           price: '25'
-        - name: French Onion Burger
-          description: braised onions, gruyere, greens, pretzel bun
+        - name: Hatch Green Chile Burger
+          description: Beemster hatch chile gouda, mild chiles, garlic aioli, arugula, brioche bun
           price: '20'
+          price2: + add bacon {+3}
         - name: BLT
           description: bacon, lettuce, tomato, ciabatta
           price: '17'
-        - name: Chicken Melt
-          description: herbed chicken, prosciutto, manchego, pesto aioli, telera bun
-          price: '20'
+        - name: Teriyaki Chicken
+          description: marinated grilled chicken, avocado, crispy onions, BC greens, telera bun
+          price: '19'
       subsections:
         - title: Sides
           items:
@@ -99,19 +102,17 @@ main:
               price: '4'
 
     - title: Pizzas
+      subtitle: starting @ 3PM
       items:
         - name: Pepperoni
           price: '20'
           description: mozzarella, red sauce
-        - name: Cubano Style
-          price: '24'
-          description: prosciutto, black forest ham, mozzarella, pickle, french dijon, EVOO
+        - name: Meatzza
+          price: '26'
+          description: short rib, sausage, red sauce
         - name: Shiitake Truffle
           price: '26'
           description: mushrooms, mozzarella, onion, garlic, spinach, arugula, truffle
-        - name: Margherita Pizza
-          price: '21'
-          description: tomato, mozzarella, parm, basil, EVOO
         - name: Cheese
           price: '18'
           description: cheese blend, red sauce
@@ -121,7 +122,11 @@ main:
         - name: Orange Crush
           price: '23'
           description: crispy chicken, buffalo sauce, cheddar, mozzarella, scallion
-
+        - name: Margherita
+          price: '22'
+          description: tomato, mozzarella, parm, basil, red sauce, EVOO
+        
+  
     - title: BYOP
       subtitle: Build Your Own Pizza
       base_price: '18'
@@ -130,8 +135,8 @@ main:
           items:
             - name: Red Sauce
             - name: Pesto
-            - name: EVOO
-            - name: Truffle
+            - name: Olive Oil
+            - name: Truffle Oil
               price: '+4'
         - title: Cheese
           items:
@@ -139,12 +144,13 @@ main:
             - name: Cheddar
             - name: Feta
         - title: Meats
-          base_price: '+2'
+          base_price: '+3'
           items:
             - name: Grilled Chicken
             - name: Pepperoni
             - name: Sausage
-            - name: Ham
+            - name: Short Rib
+              price: '+5'
         - title: Veggies
           base_price: '+1'
           items:
@@ -158,29 +164,28 @@ main:
             - name: Spinach
 
     - title: Garlic Knots
+      subtitle: starting @ 3PM
       items:
-        - name: Garlic Oil, Parm, Herbs
+        - name: garlic butter, parm, herbs
           price: '12'
 
     - title: Something Sweet
       items:
-        - name: Peanut Butter Brownie
-          price: '5'
-        - name: Berry Crisp
+        - name: Dark Chocolate Peanut Butter Brownie
+          price: '6'
+        - name: Strawberry Poundcake
           price: '9'
         - name: Ice Cream Bar
-          price: '5'
+          price: '6'
 
     - title: Kids Stuff
       subtitle: with fries or chips
       base_price: '15'
       items:
-        - name: Chicken Tenders
+        - name: Crispy Tenders
         - name: Kids Cheeseburger
         - name: Crispy Cod
         - name: Grilled Cheese
-        - name: Kid Pasta - red sauce or butter
-          price: '10'
 
     - title: Cocktails
       items:
@@ -188,39 +193,40 @@ main:
           price: '12'
           description: Rye Old Fashioned
         - name: Real Dill Michelada
-          price: '9'
+          price: '10'
           description: Modelo, Bloody Mix, Tabasco & Worcestshire
+        - name: Idleade
+          price: '10'
+          description: Gin, Vodka, Cucumber, Lemon, Lime, Agave, Grenadine
         - name: Simple Marg
           price: '13'
-          description: Tequila, Cointreau, Simple, add Gran Marnier {+3}
-        - name: Hot Toddy
-          price: '10'
-          description: Four Roses Bourbon, Lemon, Spiced Honey
-        - name: Irish Coffee
-          price: '10'
-          description: Jameson, Coffee, Cane Sugar, Whippy
+          description: Tequila, Cointreau, Lime, Sugar, add Gran Marnier {+3}
+        - name: Bloody Mary
+          price: '12'
+          description: Vodka, Bloody Mix, Worcestershire, Pickle
+        - name: Courtside Daily
+          price: '13'
+          description: Vodka, Lemonade, Iced Tea, Mango
 
     - title: Wine & Beer
       subsections:
         - items:
           - name: Segura Brut Cava
-            price: '9'
-          - name: Pere Mata Rose Cava
-            price: '14'
+            price: '10'
+          - name: Deltetto Langhe Rose "Suasi"
+            price: '12'
           - name: Allan Scott Sauvignon Blanc
-            price: '13'
+            price: '14'
           - name: La Folliette Chardonnay
             price: '14'
-          - name: Domaine Gassier Viognier
-            price: '11'
           - name: Ramsay Pinot Noir
-            price: '12'
+            price: '14'
           - name: Avignonese Cantaloro
             price: '12'
           - name: Cantena Malbec
             price: '12'
           - name: Murphy Goode Cabernet
-            price: '14'
+            price: '15'
         - items:
           - name: Coors Banquet
             price: '5'
@@ -283,20 +289,32 @@ main:
             - name: Matcha Mint Lemonade
             - name: Apple Juice
 
+    - title: Buckets
+      subtitle: for the pool/patio/courts or take it to your room
+      items:
+        - name: Domestic 6pack
+          price: '26'
+        - name: VBC Mix 4pack
+          price: '28'
+        - name: High Noon 4pack
+          price: '28'
+        - name: Idleade 4pack
+          price: '35'
+        - name: Canned Wine 4pack
+          price: '20'
+
     - title: Wines by the Bottle
       subsections:
         - title: Bubbles
           items:
             - name: Segura Viudas Cava NV, Spain
-              price: '36'
-            - name: Pere Mata Cupada Rose NV, Spain
-              price: '56'
-            - name: 375ml Laurant Perrier
+              price: '38'
+            - name: Doletetta Rose 375ml Laurant Perrier
               price: '75'
         - title: White
           items:
             - name: 2020 La Foillette Chardonnay
-              price: '52'
+              price: '54'
             - name: 2020 Sonoma Cutrer Chardonnay
               price: '60'
             - name: 2017 Novellum Chardonnay
@@ -304,37 +322,33 @@ main:
             - name: 2019 Gassier Viogner Embruns
               price: '40'
             - name: 2020 Allan Scott Sauvignon Blanc
-              price: '48'
+              price: '52'
             - name: 2020 Domaine Chatelain Sancerre
               price: '85'
             - name: 2021 Peritico Pinot Grigio
               price: '40'
             - name: 2019 Pine Ridge Chenin Blanc
-              price: '50'
+              price: '46'
         - title: Red
           items:
             - name: 2020 Ramsey Pinot Noir
-              price: '44'
+              price: '46'
             - name: 2021 Ken Wright Pinot Noir
               price: '75'
-            - name: 2017 Dominio IV Pinot Noir
-              price: '70'
             - name: 2018 Aurelien Verdet Le Prieure
               price: '135'
             - name: 2019 Catena Malbec
-              price: '55'
+              price: '40'
             - name: 2019 Tres Picos Garnacha
               price: '50'
             - name: 2018 Murphey Goode Cabernet Sauvignon
-              price: '52'
-            - name: 2016 CastleRock Cabernet Sauvignon
-              price: '44'
+              price: '55'
             - name: 2016 Ramey Cabernet Sauvignon
-              price: '140'
-            - name: 2015 Jordan Canermet Sauvignon
-              price: '150'
+              price: '90'
+            - name: 2015 Jordan Cabernet Sauvignon
+              price: '100'
             - name: 2015 Silver Oak Alexander Valley Cabernet Sauvignon
-              price: '275'
+              price: '225'
             - name: 2019 Vietti Perbacco Nebbiolo
               price: '70'
 

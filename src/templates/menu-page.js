@@ -26,10 +26,7 @@ export const MenuPageTemplate = ({
   // const fullWidthImage = getImage(fullImage) || fullImage;
   const snacks = menu_sections.find(x => x.title === 'Snacks');
 
-  const frenchFries = menu_sections.find(x => x.title === 'French Fries');
-  const ffSeasoning = frenchFries.subsections.find(x => x.title === 'Seasoning')
-  const ffSauce = frenchFries.subsections.find(x => x.title === 'Sauce')
-  const ffProtein = frenchFries.subsections.find(x => x.title === 'Protein')
+  const frenchFries = menu_sections.find(x => x.title === 'French Fry Baskets');
 
   const salads = menu_sections.find(x => x.title === 'Salads');
   const sProtein = salads.subsections.find(x => x.title === 'Salad Proteins');
@@ -41,6 +38,22 @@ export const MenuPageTemplate = ({
 
   const byop = menu_sections.find(x => x.title === 'BYOP');
 
+  const kidsStuff = menu_sections.find(x => x.title === 'Kids Stuff');
+
+  const garlicKnots = menu_sections.find(x => x.title === 'Garlic Knots');
+  
+  const somethingSweet = menu_sections.find(x => x.title === 'Something Sweet');
+
+  const cocktails = menu_sections.find(x => x.title === 'Cocktails');
+
+  const wineBeer = menu_sections.find(x => x.title === 'Wine & Beer');
+
+  const naBev = menu_sections.find(x => x.title === 'N/A Beverages');
+
+  const buckets = menu_sections.find(x => x.title === 'Buckets');
+
+  const winesBottle = menu_sections.find(x => x.title === 'Wines by the Bottle');
+
   const tocItems = [
     {
       "url": "#snacks",
@@ -49,6 +62,30 @@ export const MenuPageTemplate = ({
     {
       "url": "#french-fries",
       "title": "French Fries"
+    },
+    {
+      "url": "#salads-and-sandwiches",
+      "title": "Salads & Sandwiches"
+    },
+    {
+      "url": "#pizzas",
+      "title": "Pizzas"
+    },
+    {
+      "url": "#kids-stuff",
+      "title": "Kids Stuff"
+    },
+    {
+      "url": "#kids-stuff",
+      "title": "Something Sweet"
+    },
+    {
+      "url": "#cocktails",
+      "title": "Beverages"
+    },
+    {
+      "url": "#bottles",
+      "title": "Bottles"
     }
   ]
 
@@ -59,7 +96,7 @@ export const MenuPageTemplate = ({
       <FullWidthImage img={heroImage} title={title} />
       {/* <section className="section"> */}
       <TableOfContents items={tocItems}></TableOfContents>
-        <div className="container section">
+        <div className="container section" style={{zIndex: -1}}>
             <div className="tile is-ancestor is-justify-content-center">
               <div className="tile is-parent is-justify-content-center">
                 <article className="tile is-child box is-4 has-text-centered">
@@ -77,17 +114,17 @@ export const MenuPageTemplate = ({
                 </article>
               </div>
             </div>
-            <div className="tile is-ancestor is-align-items-center is-vertical has-text-centered">
-              <div className="tile box is-3 is-justify-content-center is-vertical">
+            <div className="tile box is-ancestor is-align-items-center is-vertical has-text-centered">
+              <div className="tile is-3 is-justify-content-center is-vertical">
                 <h1 id="french-fries" className="title">{frenchFries.title}</h1>
-                <p className="subtitle">{frenchFries.base_price}</p>
               </div>
               <div className="tile is-10 is-justify-content-center">
-              <div className="tile is-parent is-4">
-                <article className="tile is-child box">
-                  <p className="title">{ffSeasoning.title}</p>
+              {frenchFries.subsections.map((subsection) => (
+                <div className="tile is-parent is-4">
+                <article className="tile is-child">
+                  <h4 className="title">{subsection.title}</h4>
                   <div className="content">
-                  {ffSeasoning.items && ffSeasoning.items.map((item) => (
+                  {subsection.items && subsection.items.map((item) => (
                       <div key={v4()}>
                         <div className="is-flex is-flex-direction-row is-justify-content-center">
                           <p className="is-size-5 mb-0">{item.name}</p>
@@ -98,44 +135,16 @@ export const MenuPageTemplate = ({
                   </div>
                 </article>
               </div>
-              <div className="tile is-parent is-4">
-                <article className="tile is-child box">
-                  <p className="title">{ffSauce.title}</p>
-                  <div className="content">
-                  {ffSauce.items && ffSauce.items.map((item) => (
-                      <div key={v4()}>
-                        <div className="is-flex is-flex-direction-row is-justify-content-center">
-                          <p className="is-size-5 mb-0">{item.name}</p>
-                          <p className="pl-1 is-size-5">{item.price}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </article>
-              </div>
-              <div className="tile is-parent is-4">
-                <article className="tile is-child box">
-                  <p className="title">{ffProtein.title}</p>
-                  <div className="content">
-                  {ffProtein.items && ffProtein.items.map((item) => (
-                      <div key={v4()}>
-                        <div className="is-flex is-flex-direction-row is-justify-content-center">
-                          <p className="is-size-5 mb-0">{item.name}</p>
-                          <p className="pl-1 is-size-5">{item.price}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </article>
-              </div>
+              ))}
+              
               </div>
             </div>
 
-            <div className="tile is-ancestor ">
+            <div className="tile box is-ancestor ">
               <div className="tile is-vertical ">
                 <div className="tile is-justify-content-center has-text-centered">
-                  <div className="tile is-parent is-3">
-                    <article className="tile is-child box">
+                  <div className="tile is-parent is-4">
+                    <article className="tile is-child">
                       <h1 id="salads-and-sandwiches" className="title">{salads.title}</h1>
                       <div className="content">
                       {salads.items && salads.items.map((item) => (
@@ -150,10 +159,10 @@ export const MenuPageTemplate = ({
                       </div>
                     </article>
                   </div>
-                  <div className="tile is-parent is-vertical is-3">
+                  <div className="tile is-parent is-vertical is-4">
                     <div className="tile is-child">
                       <div className="tile is-parent">
-                        <article className="tile is-child box">
+                        <article className="tile is-child">
                           <p className="title">{sProtein.title}</p>
                           <div className="content">
                           {sProtein.items && sProtein.items.map((item) => (
@@ -172,7 +181,7 @@ export const MenuPageTemplate = ({
                     <div className="tile is-child">
                       <div className="tile is-parent">
                         <div className="tile is-child is-4"></div>
-                        <article className="tile is-child box">
+                        <article className="tile is-child">
                           <p className="title">{sides.title}</p>
                           <div className="content">
                           {sides.items && sides.items.map((item) => (
@@ -188,8 +197,8 @@ export const MenuPageTemplate = ({
                       </div>
                     </div>
                   </div>
-                  <div className="tile is-parent is-3">
-                    <article className="tile is-child box">
+                  <div className="tile is-parent is-4">
+                    <article className="tile is-child">
                       <p className="title">{sandwiches.title}</p>
                       <div className="content">
                       {sandwiches.items && sandwiches.items.map((item) => (
@@ -208,10 +217,11 @@ export const MenuPageTemplate = ({
               </div>
             </div>
 
-            <div className="tile is-ancestor is-justify-content-center has-text-centered">
-              <div className="tile is-parent is-10">
-                  <article className="tile is-child box">
-                    <p className="title">{pizzas.title}</p>
+            <div className="tile box is-ancestor is-justify-content-center has-text-centered">
+              <div className="tile is-parent">
+                  <article className="tile is-child">
+                    <h1 id="pizzas" className="title">{pizzas.title}</h1>
+                    <div className="subtitle">{pizzas.subtitle}</div>
                     <div className="content">
                     {pizzas.items && pizzas.items.map((item) => (
                         <div className="is-flex is-flex-direction-column pb-2" key={v4()}>
@@ -227,113 +237,189 @@ export const MenuPageTemplate = ({
               </div>
             </div>
 
-            <div className="tile is-ancestor is-align-items-center is-vertical has-text-centered">
-              <p className="title tile box is-3 is-justify-content-center">BYOP</p>
-              <div className="tile is-9 is-justify-content-center">
-              <div className="tile is-parent is-3">
-                <article className="tile is-child box">
-                  <p className="title">Sauce</p>
-                  <p className="subtitle">Subtitle</p>
-                </article>
+            <div className="tile box is-ancestor is-align-items-center is-vertical has-text-centered">
+              <div className="tile is-3 is-justify-content-center">
+                <h1 id="byop" className="title">{byop.title}</h1>
               </div>
-              <div className="tile is-parent">
-                <article className="tile is-child box">
-                  <p className="title">Cheese</p>
-                  <p className="subtitle">Subtitle</p>
-                </article>
-              </div>
-              <div className="tile is-parent">
-                <article className="tile is-child box">
-                  <p className="title">Meats</p>
-                  <p className="subtitle">Subtitle</p>
-                </article>
-              </div>
-              <div className="tile is-parent">
-                <article className="tile is-child box">
-                  <p className="title">Veggies</p>
-                  <p className="subtitle">Subtitle</p>
-                </article>
-              </div>
-              </div>
-            </div>
-
-            <div className="tile is-ancestor is-justify-content-center has-text-centered">
-              <div className="tile is-parent is-7">
-                <article className="tile is-child box">
-                  <p className="title">Kids Stuff</p>
-                  <p className="subtitle">With an image</p>
-                </article>
-              </div>
-              <div className="tile is-parent is-vertical is-3">
-                <article className="tile is-child box">
-                  <p className="title">Garlic Knots</p>
-                  <p className="subtitle">Top box</p>
-                </article>
-                <article className="tile is-child box">
-                  <p className="title">Something Sweet</p>
-                  <p className="subtitle">Bottom box</p>
-                </article>
-              </div>
-            </div>
-
-            <div className="tile is-ancestor is-justify-content-center has-text-centered">
-              <div className="tile is-parent is-10">
-                  <article className="tile is-child box">
-                    <p className="title">Cocktails</p>
+              <div className="tile is-10 is-justify-content-center">
+                {byop.subsections.map((subsection) => (
+                  <div className="tile is-parent is-4">
+                  <article className="tile is-child">
+                    <h4 className="title">{subsection.title}</h4>
                     <div className="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-                  </div>
+                    {subsection.items && subsection.items.map((item) => (
+                        <div key={v4()}>
+                          <div className="is-flex is-flex-direction-row is-justify-content-center">
+                            <p className="is-size-5 mb-0">{item.name}</p>
+                            {item.price ?? <p className="pl-1 is-size-5">{item.price}</p>}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </article>
-              </div>
+                </div>
+              ))}
+            </div>
             </div>
 
-            <div className="tile is-ancestor is-justify-content-center has-text-centered">
-              <div className="tile is-parent is-10">
-                  <article className="tile is-child box">
-                    <p className="title">Wine & Beer</p>
-                    <div className="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-                  </div>
-                  </article>
-              </div>
-            </div>
-
-            <div className="tile is-ancestor is-justify-content-center has-text-centered">
-              <div className="tile is-parent is-9">
-                  <article className="tile is-child box">
-                    <p className="title">N/A Beverages</p>
-                    <div className="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-                  </div>
-                  </article>
-              </div>
-            </div>
-
-            <div className="tile is-ancestor is-align-items-center is-vertical has-text-centered">
-              <p className="title tile box is-3 is-justify-content-center">Wines by the Bottle</p>
-              <div className="tile is-justify-content-center">
-              <div className="tile is-parent is-2">
-                <article className="tile is-child box">
-                  <p className="title">Bubbles</p>
-                  <p className="subtitle">What is up?</p>
-                </article>
-              </div>
-              <div className="tile is-parent is-2">
-                <article className="tile is-child box">
-                  <p className="title">White</p>
-                  <p className="subtitle">Bar</p>
-                </article>
-              </div>
-              <div className="tile is-parent is-2">
-                <article className="tile is-child box">
-                  <p className="title">Red</p>
-                  <p className="subtitle">With some content</p>
+            <div className="tile box is-ancestor is-justify-content-center has-text-centered">
+              <div className="tile is-parent is-4">
+                <article className="tile is-child">
+                  <h1 id="kids-stuff" className="title">{kidsStuff.title}</h1>
+                  <p className="subtitle">{kidsStuff.subtitle} {kidsStuff.base_price && kidsStuff.base_price}</p>
                   <div className="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                    {kidsStuff.items && kidsStuff.items.map((item) => (
+                        <div key={v4()}>
+                          <div className="is-flex is-flex-direction-row is-justify-content-center">
+                            <p className="is-size-5 mb-0">{item.name}</p>
+                            {item.price ?? <p className="pl-1 is-size-5">{item.price}</p>}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                </article>
+              </div>
+
+              <div className="tile is-parent is-vertical is-4">
+                <article className="tile is-child">
+                  <h1 className="title">{garlicKnots.title}</h1>
+                  <p className="subtitle">{garlicKnots.subtitle}</p>
+                  <div className="content">
+                    {garlicKnots.items && garlicKnots.items.map((item) => (
+                        <div key={v4()}>
+                          <div className="is-flex is-flex-direction-row is-justify-content-center">
+                            <p className="is-size-5 mb-0">{item.name}</p>
+                            {item.price ?? <p className="pl-1 is-size-5">{item.price}</p>}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                </article>
+
+                <article className="tile is-child">
+                  <h1 className="title">{somethingSweet.title}</h1>
+                  <p className="subtitle">{somethingSweet.subtitle}</p>
+                  <div className="content">
+                    {somethingSweet.items && somethingSweet.items.map((item) => (
+                        <div key={v4()}>
+                          <div className="is-flex is-flex-direction-row is-justify-content-center">
+                            <p className="is-size-5 mb-0">{item.name}</p>
+                            {item.price ?? <p className="pl-1 is-size-5">{item.price}</p>}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                </article>
+              </div>
+            </div>
+
+            <div className="tile box is-ancestor is-justify-content-center has-text-centered">
+              <div className="tile is-parent is-10">
+              <article className="tile is-child">
+                  <h1 id="cocktails" className="title">{cocktails.title}</h1>
+                  <p className="subtitle">{cocktails.subtitle}</p>
+                  <div className="content">
+                    {cocktails.items && cocktails.items.map((item) => (
+                        <div className="is-flex is-flex-direction-column pb-2" key={v4()}>
+                        <div className="is-flex is-flex-direction-row is-justify-content-center">
+                          <p className="is-size-5 mb-0">{item.name}</p>
+                          <p className="pl-1 is-size-5">{item.price}</p>
+                        </div>
+                        <p className="pl-1 is-size-8">{item.description}</p>
+                      </div>
+                      ))}
+                    </div>
+                </article>
+              </div>
+            </div>
+
+            <div className="tile box is-ancestor is-justify-content-center has-text-centered">
+              <div className="tile is-parent is-10">
+              <article className="tile is-child">
+                  <p className="title">{wineBeer.title}</p>
+                  <p className="subtitle">{wineBeer.subtitle}</p>
+                  <div className="content is-flex is-flex-direction-row is-justify-content-space-evenly">
+                    {wineBeer.subsections && wineBeer.subsections.map((subsection) => (
+                      <div className="is-flex is-flex-direction-column">
+                        {subsection.items && subsection.items.map((item) => (
+                        <div key={v4()}>
+                          <div className="is-flex is-flex-direction-row is-justify-content-left">
+                            <p className="is-size-5 mb-0">{item.name}</p>
+                            {item.price ?? <p className="pl-1 is-size-5">{item.price}</p>}
+                          </div>
+                        </div>
+                      ))}
+                      </div>
+                    ))}
+                    </div>
+                </article>
+              </div>
+            </div>
+
+            <div className="tile box is-horizontal is-ancestor is-justify-content-center has-text-centered">
+              <div className="tile is-parent is-8">
+                <article className="tile is-child">
+                  <p className="title">{naBev.title}</p>
+                  <div className="content is-flex is-flex-wrap-wrap">
+                  {naBev.subsections.map((subsection) => (
+                    <div className="tile is-flex is-6 is-flex-direction-column">
+                      <p className="subtitle">{subsection.title}</p>
+                      {subsection.items && subsection.items.map((item) => (
+                      <div key={v4()}>
+                        <div className="is-flex is-flex-direction-row is-justify-content-center">
+                          <p className="is-size-5 mb-0">{item.name}</p>
+                          {item.price ?? <p className="pl-1 is-size-5">{item.price}</p>}
+                        </div>
+                      </div>
+                      ))}
+                    </div>
+                  ))
+                  }
                   </div>
                 </article>
               </div>
+
+              <div className="tile is-parent is-4">
+                <article className="tile is-child">
+                  <p className="title">{buckets.title}</p>
+                  <p className="subtitle">{buckets.subtitle}</p>
+                  <div className="content">
+                    {buckets.items && buckets.items.map((item) => (
+                        <div key={v4()}>
+                          <div className="is-flex is-flex-direction-row is-justify-content-center">
+                            <p className="is-size-5 mb-0">{item.name}</p>
+                            {item.price ?? <p className="pl-1 is-size-5">{item.price}</p>}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                </article>
               </div>
+            </div>
+
+            <div className="tile box is-ancestor is-align-items-center is-vertical has-text-centered">
+              <div className="tile is-3 is-justify-content-center">
+                <h1 id="bottles" className="title">{winesBottle.title}</h1>
+              </div>
+              <div className="tile is-flex is-flex-direction-column is-align-items-center">
+                {winesBottle.subsections.map((subsection) => (
+                  <div className="tile is-parent" key={v4()}>
+                  <article className="tile is-child">
+                    {subsection.title && (<h4 className="title">{subsection.title}</h4>)}
+                    <div className="content">
+                    {subsection.items && subsection.items.map((item) => (
+                        <div key={v4()}>
+                          <div className="is-flex is-flex-direction-row is-justify-content-center">
+                            <p className="is-size-5 mb-0">{item.name}</p>
+                            {item.price ?? <p className="pl-1 is-size-5">{item.price}</p>}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </article>
+                </div>
+              ))}
+            </div>
             </div>
             {/* <Testimonials testimonials={testimonials} /> */}
       {/* </section> */}
@@ -416,7 +502,6 @@ export const pageQuery = graphql`
             items {
               name
               price
-              price2
               description
             }
             subsections {

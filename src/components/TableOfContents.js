@@ -48,7 +48,7 @@ const TableOfContents = ({ items }) => {
     // }
 
     return (
-        <div className='tile' style={{ position: 'fixed', top: '40vh', right: '2vw' }}>
+        <div className='tile' style={{ position: 'fixed', top: '25vh', right: '2vw' }}>
             {/* <details open>
             <summary>Table of Contents</summary>
             <ol>
@@ -72,7 +72,7 @@ const TableOfContents = ({ items }) => {
             </details> */}
              <Scrollspy items={url} currentClassName="is-current" className="toc-list">
                 {items.map(p => (
-                    <li key={p.url}>
+                    <li key={p.url} style={{ cursor: 'pointer' }}>
                     <a href={p.url}>{p.title}</a>
                     </li>
                 ))}
