@@ -94,7 +94,6 @@ export const MenuPageTemplate = ({
   return (
     <div className="content">
       <FullWidthImage img={heroImage} title={title} />
-      {/* <section className="section"> */}
       <TableOfContents items={tocItems}></TableOfContents>
         <div className="container section" style={{zIndex: -1}}>
             <div className="tile is-ancestor is-justify-content-center">
@@ -241,9 +240,9 @@ export const MenuPageTemplate = ({
               <div className="tile is-3 is-justify-content-center">
                 <h1 id="byop" className="title">{byop.title}</h1>
               </div>
-              <div className="tile is-10 is-justify-content-center">
+              <div className="tile is-10 is-justify-content-space-evenly">
                 {byop.subsections.map((subsection) => (
-                  <div className="tile is-parent is-4">
+                  <div className="tile is-parent is-2">
                   <article className="tile is-child">
                     <h4 className="title">{subsection.title}</h4>
                     <div className="content">
@@ -251,7 +250,7 @@ export const MenuPageTemplate = ({
                         <div key={v4()}>
                           <div className="is-flex is-flex-direction-row is-justify-content-center">
                             <p className="is-size-5 mb-0">{item.name}</p>
-                            {item.price ?? <p className="pl-1 is-size-5">{item.price}</p>}
+                            <p className="pl-1 is-size-5">{item.price}</p>
                           </div>
                         </div>
                       ))}
