@@ -1,8 +1,11 @@
-import * as React from "react";
-import PropTypes from "prop-types";
+import * as React from 'react';
+import PropTypes from 'prop-types';
 
 export const HTMLContent = ({ content, className }) => (
-  <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
+  <div
+    className={className}
+    dangerouslySetInnerHTML={{ __html: content }}
+  />
 );
 
 const Content = ({ content, className }) => (
@@ -11,7 +14,7 @@ const Content = ({ content, className }) => (
 
 Content.propTypes = {
   content: PropTypes.node,
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 HTMLContent.propTypes = Content.propTypes;

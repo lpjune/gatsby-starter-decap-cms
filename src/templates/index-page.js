@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 
-import Layout from "../components/Layout";
-import Features from "../components/Features";
-import FullWidthImage from "../components/FullWidthImage";
+import Layout from '../components/Layout';
+import Features from '../components/Features';
+import FullWidthImage from '../components/FullWidthImage';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -16,13 +16,18 @@ export const IndexPageTemplate = ({
   subheading2,
   mainpitch,
   description,
-  intro,
+  intro
 }) => {
   const heroImage = getImage(image) || image;
 
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} subheading2={subheading2}/>
+      <FullWidthImage
+        img={heroImage}
+        title={title}
+        subheading={subheading}
+        subheading2={subheading2}
+      />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -48,7 +53,9 @@ export const IndexPageTemplate = ({
                   <Features gridItems={intro.blurbs} />
                   <div className="columns">
                     <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/menu">
+                      <Link
+                        className="btn"
+                        to="/menu">
                         See menu
                       </Link>
                     </div>
@@ -72,8 +79,8 @@ IndexPageTemplate.propTypes = {
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+    blurbs: PropTypes.array
+  })
 };
 
 const IndexPage = ({ data }) => {
@@ -98,9 +105,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 };
 
 export default IndexPage;
