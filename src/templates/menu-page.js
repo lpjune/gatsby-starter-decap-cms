@@ -25,12 +25,7 @@ export const MenuPageTemplate = ({
   // const fullWidthImage = getImage(fullImage) || fullImage;
 
   useEffect(() => {
-    setToc(menu_sections.map((section) => (
-      {
-        url: `#${section.title}`,
-        title: section.title
-      }
-    )))
+    setToc(menu_sections.map((section) => section.title));
   }, [menu_sections]);
 
   return (
@@ -43,13 +38,17 @@ export const MenuPageTemplate = ({
       <div
         className="container section"
         style={{ zIndex: -1 }}>
-        
-        <div className='is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-evenly'>
-          {menu_sections && menu_sections.map((section) => (
-            <div className={`tile is-ancestor is-justify-content-center ${section.width === '50%' ? 'is-6' : 'is-12'}`}>
-              <MenuSection { ...section } />
-            </div>
-          ))}
+        <div className="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-evenly">
+          {menu_sections &&
+            menu_sections.map((section) => (
+              <div
+                key={section.title}
+                className={`tile is-ancestor is-justify-content-center ${
+                  section.width === '50%' ? 'is-6' : 'is-12'
+                }`}>
+                <MenuSection {...section} />
+              </div>
+            ))}
         </div>
       </div>
     </div>

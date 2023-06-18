@@ -3,20 +3,22 @@ import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 
 const MenuSubsection = ({ title, items }) => (
-    <article key={v4()} className="tile is-child">
-        <h4 className="title">{title}</h4>
-        <div className="content">
-            {items &&
-            items.map((item) => (
-                <div key={v4()}>
-                <div className="is-flex is-flex-direction-row is-justify-content-center">
-                    <p className="is-size-5 mb-0">{item.name}</p>
-                    <p className="pl-1 is-size-5">{item.price}</p>
-                </div>
-                </div>
-            ))}
-        </div>
-    </article>
+  <article
+    key={v4()}
+    className="tile is-child">
+    <h4 className="title">{title}</h4>
+    <div className="content">
+      {items &&
+        items.map((item) => (
+          <div key={v4()}>
+            <div className="is-flex is-flex-direction-row is-justify-content-center">
+              <p className="is-size-5 mb-0">{item.name}</p>
+              <p className="pl-1 is-size-5">{item.price}</p>
+            </div>
+          </div>
+        ))}
+    </div>
+  </article>
 );
 
 MenuSubsection.propTypes = {
