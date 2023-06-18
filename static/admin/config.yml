@@ -139,6 +139,8 @@ collections:
                   widget: list,
                   fields: [
                     { label: Title, name: title, widget: string },
+                    { label: Width, name: width, widget: select, options: ["50%", "100%"], default: "100%" },
+                    { label: Subsection Orientation, name: orientation, widget: select, options: ["horizontal", "vertical"], default: "horizontal" },
                     { label: Subtitle, name: subtitle, widget: string, required: false },
                     { label: Base Price, name: base_price, widget: string, required: false },
                     {
@@ -149,7 +151,7 @@ collections:
                         { label: Name, name: name, widget: string },
                         { label: Price, name: price, widget: string, required: false },
                         { label: Price2, name: price2, widget: string, required: false },
-                        { label: Description, name: description, widget: string }
+                        { label: Description, name: description, widget: string, required: false }
                       ]
                     },
                     {
