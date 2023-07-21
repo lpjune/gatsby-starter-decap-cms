@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import logo from '../img/logo.png';
+import logo from '../img/apres-title-horizontal.png';
+import title from '../img/title-stacked.png';
 import mapPin from '../img/feather/map-pin.svg';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
 
   return (
     <nav
-      className="navbar is-transparent"
+      className={`navbar ${isActive && 'show-white'}`}
+      style={{position: 'fixed', display: 'flex'}}
       role="navigation"
       aria-label="main-navigation">
-      <div className="container">
-        <div className="navbar-brand">
-          <Link
+      <div className={`container is-flex is-flex-direction-column ${isActive && 'show-white'}`}>
+        {/* <div className="navbar-brand"> */}
+          {/* <Link
             to="/"
             className="navbar-item"
             title="Logo">
@@ -22,7 +25,7 @@ const Navbar = () => {
               alt="Apres Cafe"
               style={{}}
             />
-          </Link>
+          </Link> */}
           {/* Hamburger menu */}
           <button
             className={`navbar-burger burger ${isActive && 'is-active'}`}
@@ -32,7 +35,7 @@ const Navbar = () => {
             <span />
             <span />
           </button>
-        </div>
+        {/* </div> */}
         <ul
           id="navMenu"
           className={` navbar-start has-text-centered navbar-menu ${
@@ -69,7 +72,7 @@ const Navbar = () => {
               Contact
             </Link>
           </li>
-          <li className="navbar-end has-text-centered">
+          <li className="has-text-centered">
             <div className="navbar-item">
               <button
                 className="button is-responsive"
@@ -86,7 +89,18 @@ const Navbar = () => {
             </div>
           </li>
         </ul>
+        <div id="navTitle" style={{flexGrow: 2, flexDirection: 'column', alignItems: 'center', justifyContent: 'unset', marginLeft: 'unset'}}>
+          <Link
+            to="/"
+            title="Logo"
+            style={{flexGrow: 1}}>
+            <img
+              style={{ height: '80%', width: 'auto'}} src={title} alt='Apres'
+            />
+          </Link>
+        </div>
       </div>
+
     </nav>
   );
 };

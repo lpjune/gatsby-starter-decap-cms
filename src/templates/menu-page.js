@@ -35,21 +35,17 @@ export const MenuPageTemplate = ({
         title={title}
       />
       <TableOfContents items={toc}></TableOfContents>
-      <div
-        className="container section"
-        style={{ zIndex: -1 }}>
-        <div className="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-space-evenly">
-          {menu_sections &&
-            menu_sections.map((section) => (
-              <div
-                key={section.title}
-                className={`tile is-ancestor is-justify-content-center ${
-                  section.width === '50%' ? 'is-6' : 'is-12'
-                }`}>
-                <MenuSection {...section} />
-              </div>
-            ))}
-        </div>
+      <div className="is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-left" style={{ zIndex: -1, marginLeft: '30px' }}>
+        {menu_sections &&
+          menu_sections.map((section) => (
+            <div
+              key={section.title}
+              className={`tile is-ancestor is-justify-content-center ${
+                section.width === '50%' ? 'is-6' : 'is-12'
+              }`}>
+              <MenuSection {...section} />
+            </div>
+          ))}
       </div>
     </div>
   );

@@ -11,8 +11,8 @@ const MenuSection = ({
   subsections,
   orientation
 }) => (
-  <div className="tile is-parent is-justify-content-center">
-    <article className={`tile is-child box has-text-centered`}>
+  <div className="tile is-parent is-justify-content-left">
+    <article className={`tile is-child box`}>
       <h1
         id={title}
         className="title">
@@ -23,7 +23,7 @@ const MenuSection = ({
         {items &&
           items.map((item) => (
             <div key={v4()}>
-              <div className="is-flex is-flex-direction-row is-justify-content-center">
+              <div className="is-flex is-flex-direction-row is-justify-content-left">
                 <p className="is-size-5 mb-0">{item.name}</p>
                 <p className="pl-1 is-size-5">{item.price}</p>
               </div>

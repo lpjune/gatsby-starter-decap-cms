@@ -114,11 +114,54 @@ $menu-label-color: $white-ter
 
 @import "~bulma"
 
+#pageLayout
+  display: flex
+  @include desktop
+    flex-direction: row
+  @include mobile
+    flex-direction: column
+
+#pageLayout .main-content
+  @include desktop
+    flex-grow: 1
+  // @include mobile
+  //   padding-top: 5vh
+
+.navbar
+  @include desktop
+    height: 100vh
+    width: 200px
+  @include mobile
+    // height: 5vh
+    width: 100vw
+    // background-color: transparent
+
 .navbar-brand .navbar-item img
   @include desktop
     max-height: unset
     width: 50px
 
+#navMenu
+  @include desktop
+    display: flex
+    flex-direction: column
+    align-items: center
+    flex-grow: 0
+
+#navTitle
+  @include desktop
+    display: flex
+  @include mobile
+    display: none
+
+
+
+.navbar
+  @include mobile
+    background-color: transparent
+
+    .show-white
+      background-color: white
 
 // // responsiveness
 // +tablet-only
@@ -146,3 +189,6 @@ $menu-label-color: $white-ter
   .is-current 
     color: white
     background-color: #FD461E
+
+.josefin-slab
+  font-family: 'Josefin_Slab', serif

@@ -5,13 +5,13 @@ import { v4 } from 'uuid';
 const MenuSubsection = ({ title, items }) => (
   <article
     key={v4()}
-    className="tile is-child">
+    className="is-child">
     <h4 className="title">{title}</h4>
-    <div className="content">
+    <div className="content" style={{paddingRight: '20px'}}>
       {items &&
         items.map((item) => (
           <div key={v4()}>
-            <div className="is-flex is-flex-direction-row is-justify-content-center">
+            <div className="is-flex is-flex-direction-row is-justify-content-left">
               <p className="is-size-5 mb-0">{item.name}</p>
               <p className="pl-1 is-size-5">{item.price}</p>
             </div>
